@@ -9,7 +9,5 @@ def home(request):
 
 
 def vulnerable(request):
-    data = request.POST.get('name')
-    print(data)
 
-    return render(request, 'vulnerable.html', {'data': data})
+    return render(request, 'vulnerable.html')
