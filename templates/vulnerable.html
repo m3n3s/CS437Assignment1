@@ -4,25 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CS437</title>
 </head>
 <body>
-    <h1>Input Printer</h1>
+    <h1>CS437 XSS Injection</h1>
     <h1>Hello User</h1>
-    
+
     <form method="get">
-        <label for="query">Search: </label>
-        <input type="text" id="query" name="query">
-        <input type="submit" value="Search"></input>
-    </form>
+        <label for="query">Input: </label>
+        <input type="text" id="query" name="query" />
+        <input type="submit" value="Submit" />
+    </form>   
 
-    <span id="search-query"></span>
+    <h3 id="search-query">Your input is </h3>
 
+    <a href="/">
+        <button>Non-vulnerable Version</button>
+    </a>
+        
     <script type="application/javascript">
         var searchParams = new URLSearchParams(document.location.search);
-        if(searchParams.has("query")){
-            document.getElementById("search-query").innerHTML = "You searched for " + searchParams.get("query")
+        if (searchParams.has("query"))
+        {
+            document.getElementById("search-query").innerHTML = "Your input is " + searchParams.get("query")
         }
     </script>
-</body>
+    </body>
+    
 </html>

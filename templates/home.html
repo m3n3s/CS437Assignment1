@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CS437</title>
 </head>
 <body>
-    <h1>Input Printer</h1>
+    <h1>CS437 XSS Injection</h1>
     <h1>Hello User</h1>
     
     <form method="post">
@@ -16,6 +16,14 @@
         <button type="submit">Submit</button>
     </form>
 
-    <h3>Your input is {{data}}</h3>
+    {% if data != none %}
+        <h3>Your input is {{data}}</h3>
+    {% else %}
+        <h3>Your input is </h3>
+    {% endif %}
+
+    <a href="/vulnerable">
+        <button>Vulnerable Version</button>
+    </a>
 </body>
 </html>
